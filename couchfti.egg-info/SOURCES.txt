@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+couchfti/__init__.py
+couchfti/index.py
+couchfti/query.py
+couchfti/search.py
+couchfti.egg-info/PKG-INFO
+couchfti.egg-info/SOURCES.txt
+couchfti.egg-info/dependency_links.txt
+couchfti.egg-info/entry_points.txt
+couchfti.egg-info/not-zip-safe
+couchfti.egg-info/top_level.txt

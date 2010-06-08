@@ -24,8 +24,8 @@ class Searcher(object):
         self.__indexes = indexes
 
     def search_docs(self, index, query, skip, max):
-        rows = self.db.view('_all_docs', include_docs=True,
-                            keys=self.search_docids(index, query, skip, max))
+        rows = self.__db.view('_all_docs', include_docs=True,
+                              keys=self.search_docids(index, query, skip, max))
         return [row.doc for row in rows]
 
     def search_docids(self, index, query, skip, max):

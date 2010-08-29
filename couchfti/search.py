@@ -31,7 +31,7 @@ class Searcher(object):
     def search_docids(self, index, query, skip, max):
         return [r.id for r in self.search(index, query, skip, max)]
 
-    def search(self, index, query, skip, max):
+    def search(self, index, query, skip, max, checkatleast=0):
         config = self.__indexes[index]
         try:
             conn = xappy.SearchConnection(os.path.join(self.__path, config['path']))
@@ -57,7 +57,7 @@ class Searcher(object):
             else:
                 sortby = '-+'[order[1]] + order[0]
             # Run and return the query.
-            return conn.search(query, skip, skip+max, sortby=sortby)
+            return conn.search(query, skip, skip+max, sortby=sortby, checkatleast=checkatleast)
         finally:
             conn.close()
 
